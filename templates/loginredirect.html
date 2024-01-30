@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .uandlbuttons{
+            padding-top: 50px;
+            padding-bottom: 50px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+        .uandlbuttons button{
+            background: black;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        .uandlbuttons a{
+            color: white;
+            text-decoration: none;
+        }
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .l1{
+            background: black;
+            padding: 10px;
+            
+        }
+        .l1 h3{
+            color: white;
+        }
+        .gif_div{
+            height: 500px;
+            background-position: center;
+            background-size: contain;
+            background-repeat: no-repeat,no-repeat;
+            background-image:url('https://i.pinimg.com/originals/57/61/5b/57615b8c0092a66c1d4058b1692955cc.gif'),url('https://i.pinimg.com/originals/ba/d0/0f/bad00f07a2e9965ef79eebd4e702df6e.gif');
+            
+        }
+    </style>
+</head>
+<body>
+    <div class="l1">
+        <h3>Welcome {{username}} !</h3>
+    </div>
+    <div>
+        <div class="gif_div">
+            
+        </div>
+    </div>
+    <form action="" method="POST">
+        <div class="uandlbuttons">
+            <div>
+                <button>
+                    <a href="{% url 'updateuser' id  %}">Update Profile</a>
+                </button>
+            </div>
+            <div>
+                <button>
+                    <a href="/userlogout/">Log out</a>
+                </button>
+            </div>
+            <div>
+                <button>
+                    <a href="{% url 'delete' id%}">Delete Account</a>
+                </button>
+            </div>
+        </div>
+    </form>
+    
+</body>
+</html>

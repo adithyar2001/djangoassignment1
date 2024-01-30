@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        button{
+            padding: 5px;
+            background: black;
+            color: white;
+            border-radius: 5px;
+            border: none;
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+        *{
+            font-family: monospace;
+        }
+        form{
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .f1 div:nth-child(2) input{
+            padding: 5px;
+            width: 557px;
+        }
+        .f2 div:nth-child(2) input{
+            padding: 5px;
+            width: 557px;
+        }
+        .f3 div:nth-child(2) input{
+            padding: 5px;
+            width: 557px;
+        }
+        .f4 div:nth-child(2) input{
+            padding: 5px;
+            width: 557px;
+        }
+        .f5{
+            display: flex;
+        }
+        .f6 div:nth-child(2) input{
+            padding: 5px;
+            width: 557px;
+        }
+        .f9{
+            display: flex;
+            justify-content: center;
+            padding: 10px;
+        }
+        .f10{
+            display: flex;
+            align-items: baseline;
+            justify-content: center;
+
+        }
+
+        .cp{
+            display: flex;
+            gap: 10px;
+        }
+
+        .cp div{
+            display: flex;
+            
+        }
+        
+        .cp .f7 div:nth-child(2) input{
+            padding: 5px;
+        }
+        .second-screen{
+            background-image:url('https://24.media.tumblr.com/90465b3b6a901581274a31b6747db8c3/tumblr_mnig1u59cI1s5jjtzo1_400.gif'),url('https://miro.medium.com/v2/resize:fit:1400/1*44799UW8y4KGlJb36fTD7Q.gif'),url("https://imgs.search.brave.com/GU4qGIVmWVK0UWimb7VQDkjIWJoZlQpGp_r3NrA8qNk/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9pbWcu/ZnJlZXBpay5jb20v/ZnJlZS1waG90by8y/ZC13YWxscGFwZXIt/d2l0aC1ncmFwaGlj/LWdyYWlueS1ncmFk/aWVudC1jb2xvcnNf/MjMtMjE1MTAwMTU4/MS5qcGc_c2l6ZT02/MjYmZXh0PWpwZw");
+            background-color: #cccccc;
+            width:300px;
+            background-position: center; 
+            background-repeat: no-repeat;
+            background-size: contain,contain,cover;
+        }
+
+
+        
+        label{
+            font-weight: 700;
+            font-family: monospace;
+        }
+        .full-signup{
+            background: white;
+            display: flex;
+            border: 2px solid black;
+            width: fit-content;
+            border-radius: 5px;
+            padding: 15px;
+            margin: auto;
+        }
+        .full-signup div:nth-child(1){
+            padding-right: 5px;
+        }
+        h1{
+            text-align: center;
+            color: white;
+            font-family: monospace;
+            font-weight: bolder;
+        }
+        body{
+            background: black;
+        }
+        .im1{
+            display: flex;
+        }
+    </style>
+</head>
+<body>
+    <div class="banner">
+        <h1>SIGN UP</h1>
+    </div>
+    <div class="full-signup">
+        <div>
+            <form action="" method="POST" enctype="multipart/form-data">
+                
+                {%csrf_token%}
+                <!-- {{form.as_p}} -->
+                <div class="f1">
+                    <div>
+                        <label>Firstname:</label>
+                    </div>
+                    <div>
+                        {{form.firstname}}
+                    </div>
+                </div>
+
+                <div class="f2">
+                    <div>
+                        <label>Lastname:</label>
+                    </div>
+                    <div>
+                        {{form.lastname}}
+                    </div>
+                </div>
+
+                <div class="f3">
+                    <div>
+                        <label>Email:</label>
+                    </div>
+                    <div>
+                        {{form.email}}
+                    </div>
+                </div>
+
+                <div class="f4">
+                    <div>
+                        <label>Phone Number:</label>
+                    </div>
+                    <div>
+                        {{form.phone}}
+                    </div>
+                </div>
+
+                <div class="f5">
+                    <div>
+                        <label>Gender:</label>
+                    </div>
+                    <div>
+                        {{form.gender}}
+                    </div>
+                </div>
+
+                <div class="f6">
+                    <div>
+                        <label>username:</label>
+                    </div>
+                    <div>
+                        {{form.username}}
+                    </div>
+                </div>
+                <div class="im1">
+                    <div>
+                        <label>Upload Image:</label>
+                    </div>
+                    <div>
+                        {{form.pimage}}
+                    </div>
+                </div>
+
+                <div class="cp">
+                    <div class="f7">
+                        <div>
+                            <label>Password:</label>
+                        </div>
+                        <div>
+                            {{form.password}}
+                        </div>
+                    </div>
+    
+                    <div class="f8">
+                        <div>
+                            <label>Confirm Password:</label>
+                        </div>
+                        <div>
+                            {{form.confirm_password}}
+                        </div>
+                    </div>
+                </div>
+                <div style="text-align: center;">
+                    <p>{{ermsg}}</p>
+                </div>
+                <div class="f9">
+                    <button type="submit">submit</button>
+                </div>
+                <div class="f10">
+                    <div>
+                        <p>Already Have an Account?</p>
+                    </div>
+                    <div>
+                        <a href="/login">Log in</a>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="second-screen">
+
+        </div>
+    </div>
+</body>
+</html>

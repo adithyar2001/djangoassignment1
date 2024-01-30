@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            font-family: monospace;
+        }
+        .f1{
+            
+            justify-content: space-evenly;
+        }
+        .f1 input{
+            width: 192px;
+            padding: 5px;
+            background: none;
+            border:none;
+            border-bottom: 1px solid black;
+        }
+        .f2 input{
+            width: 192px;
+            background: none;
+            border: none;
+            border-bottom: 1px solid black;
+            padding: 5px;
+        }
+        .f2{
+            
+            justify-content: space-evenly;
+        }
+        button{
+            background: black;
+            color: white;
+            border-radius: 5px;
+            border: none;
+            padding: 5px;
+        }
+        form{
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            width: fit-content;
+            padding: 10px;
+
+        }
+        .f3{
+            display: flex;
+            justify-content: center;
+        }
+        .f4{
+            display: flex;
+            align-items: baseline;
+            justify-content: center;
+        }
+        .frpass a{
+           text-decoration: none;
+           color: black;
+           font-family: monospace;
+        }
+        .frpass{
+            text-align: end;
+        }
+        .login-head{
+            text-align: center;
+        }
+        .login-head h1{
+            font-family: 'Courier New', Courier, monospace;
+        }
+        .a2{
+            margin: auto;
+            width: fit-content;
+            background-color: white;
+           padding: 50px; 
+           border-radius: 20px;
+           border: 2px solid black;
+        }
+        body{
+            background: #ef32d9;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right , #89fffd, #ef32d9);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #89fffd, #ef32d9); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+        }
+        .invalid-log{
+            text-align: center;
+        }
+        .a1{
+            margin-top: 50px;
+        }
+        .n1{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .g1{
+            
+            height: 50px;
+            width: 50px;
+            background-size: cover;
+            background-position: center;
+            background-image: url('https://i.gifer.com/origin/1e/1eca394692a06b6bdb31383a2a1bcaf9_w200.gif');
+        }
+    </style>
+</head>
+<body>
+    <div class="a1">
+        <div class="a2">
+            <form action="/userlogin/" method="POST" enctype="multipart/form-data">
+                <div class="n1">
+                    <div class="login-head">
+                        <h1>LOGIN</h1>
+                    </div>
+                    <div class="g1"></div>
+                </div>
+                
+                {%csrf_token%}
+                <div class="f1">
+                    <div>
+                        <label>Username:</label>
+                    </div>
+                    <div>
+                        <input type="text" name="username">
+                    </div>
+                </div>
+
+                <div class="f2">
+                    <div>
+                        <label>Password:</label>
+                    </div>
+                    <div>
+                        <input type="password" name="password">
+                    </div>
+                </div>
+                <div class="frpass">
+                    <a href="">Forgot password?</a>
+                </div>
+                <div class="f3">
+                    <button type="submit">Log in</button>
+                </div>
+                <div class="invalid-log">
+                    <p>{{cb}}</p>
+                </div>
+
+                <div class="f4">
+                    <div>
+                        <p>Don't have an account? </p>
+                    </div>
+                    <div>
+                        <a href="/"> Signup</a>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

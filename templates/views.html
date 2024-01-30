@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="widtd=device-widtd, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table,th,td{
+            border: 2px solid black;
+            text-align: center;
+            border-collapse: collapse;
+            
+        }
+        table{
+            margin: auto;
+        }
+        td{
+            padding: 3px;
+        }
+        form{
+           overflow-x: auto;
+            
+        }
+        .q1{
+            margin-top: 50px;
+        }
+        button{
+            background: black;
+            padding: 3px;
+            border-radius: 3px;
+
+        }
+        button a{
+            color: white;
+            text-decoration: none;
+        }
+        .q2 h2{
+            text-align: center;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="q1">
+        <form action="">
+            <div class="q2">
+                <h2>DATABASE</h2>
+            </div>
+            {%csrf_token%}
+            <table>
+                <tr>
+                    <th>Serial No</th>
+                    <th>List No</th>
+                    <th>Firstname</th>
+                    <th>Lastname</th>
+                    <th>Username</th>
+                    <th>Email</th>
+                    <th>Phone Number</th>
+                    <th>Gender</th>
+                    <th>image</th>
+                    <th colspan="3">Operations</th>
+                </tr>
+                {% for i in cr%}
+                <tr>
+                    <td>{{forloop.counter}}</td>
+                    <td>{{i.id}}</td>
+                    <td>{{i.firstname}}</td>
+                    <td>{{i.lastname}}</td>
+                    <td>{{i.username}}</td>
+                    <td>{{i.email}}</td>
+                    <td>{{i.phone}}</td>
+                    <td>{{i.gender}}</td>
+                    <td>{{i.image.url}}</td>
+
+                    <td>
+                        <button>
+                            <a href="{% url 'detailview' i.id  %}">view</a>
+                        </button>
+                    </td>
+                    <td>
+                        <button>
+                            <a href="{% url 'updateuser' i.id  %}">update</a>
+                        </button>
+                    </td>
+                    <td>
+                        <button>
+                            <a href="{% url 'delete' i.id  %}">delete</a>
+                        </button>
+                    </td>
+                </tr>
+                {%endfor%}
+            </table>
+    
+
+        
+               </form>
+    </div>
+   
+</body>
+</html>

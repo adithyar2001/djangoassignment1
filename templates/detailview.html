@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table,th,td{
+            text-align: center;
+            border-collapse: collapse;
+            border: 2px solid black;
+            padding: 5px;
+        }
+        table{
+            margin: auto;
+        }
+        .w1{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <div class="w1">
+            <h2>DETAILED VIEW</h2>
+        </div>
+        <div class="w1">
+            <h4>Details of the {{cm.username}}.</h4>
+        </div>
+        <table border="2">
+            <tr>
+                <th>Firstname</th>
+                <th>Lastname</th>
+                <th>Username</th>
+                <th>Phone Number</th>
+                <th>Email</th>
+                <th>Gender</th>
+            </tr>
+            <tr>
+                <td>{{cm.firstname}}</td>
+                <td>{{cm.lastname}}</td>
+                <td>{{cm.username}}</td>
+                <td>{{cm.phone}}</td>
+                <td>{{cm.email}}</td>
+                <td>{{cm.gender}}</td>
+            </tr>
+        </table>
+    </div>
+    
+</body>
+</html>

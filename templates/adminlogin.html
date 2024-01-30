@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            font-family: monospace;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <form action="/adloginfunc/" method="POST">
+            {%csrf_token%}
+            <div>
+                <h1>ADMIN LOGIN</h1>
+            </div>
+            <div>
+                <div>
+                    <label>USERNAME:</label>
+                </div>
+                <input type="text" name="username">
+            </div><div>
+                <div>
+                    <label>PASSWORD:</label>
+                </div>
+                <input type="password" name="password">
+            </div>
+            <div>
+                <button type="submit">login</button>
+            </div>
+            <div>
+                <h2>{{er}}</h2>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
